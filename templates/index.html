@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Automation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WhatsApp Web Automation</h1>
+        </header>
+        <form action="/send" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="excel_file">Upload Excel File (with contacts):</label>
+                <input type="file" name="excel_file" id="excel_file" required>
+            </div>
+            <div class="form-group">
+                <label for="message_template">Enter Message Template:</label>
+                <textarea name="message_template" id="message_template" rows="6" placeholder="Enter your message template here (use {name} for contact name)"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Send Messages</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
